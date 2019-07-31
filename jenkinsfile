@@ -15,9 +15,6 @@ triggers {
     stages{
     stage('Initialize') {
             steps {
-                script {
-                    properties([pipelineTriggers([pollSCM('')])])
-                }
                 git 'https://github.com/venu148/jenkins2--spring-boot.git'
                 }
         }
