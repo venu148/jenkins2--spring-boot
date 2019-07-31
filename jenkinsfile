@@ -8,7 +8,7 @@ pipeline{
   buildDiscarder(logRotator( numToKeepStr: '5', daysToKeepStr: '5'))
 }
 triggers {
-  pollSCM '*/2 * * * *'
+  pollSCM '*/5 * * * *'
 }
     stages{
     stage('Initialize') {
@@ -22,7 +22,7 @@ triggers {
         stage('1'){
             steps{
                 sh 'echo hii11'
-                sh 'sleep 180'
+                sh 'sleep 10'
         }
     }
     }
