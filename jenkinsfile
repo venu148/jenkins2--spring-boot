@@ -4,8 +4,13 @@ pipeline{
         label 'slave_node1'
         }
     }
-    triggers {
-  pollSCM 'H/2 * * * *'
+    options { 
+  enableConcurrentBuilds() 
+  buildDiscarder(logRotator( numToKeepStr: '5', daysToKeepStr: '5'))
+}
+
+triggers { 
+  pollSCM('* * * * *')
 }
     stages{
     stage('Initialize') {
