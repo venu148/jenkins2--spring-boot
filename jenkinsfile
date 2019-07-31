@@ -21,7 +21,7 @@ triggers {
         stage('1'){
             steps{
                 sh 'echo hii11'
-                sh 'sleep 10'
+                sh 'sleep 180'
         }
     }
     }
