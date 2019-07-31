@@ -19,7 +19,7 @@ pipeline{
         stage('1'){
             steps{
                 sh 'echo hii11'
-                //sh 'sleep 120'
+                sh 'sleep 120'
         }
     }
     }
