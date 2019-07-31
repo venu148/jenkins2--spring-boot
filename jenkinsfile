@@ -1,0 +1,26 @@
+pipeline{
+    agent{
+        node{
+        label 'slave_node1'
+        }
+    }
+    triggers {
+  pollSCM '*/1 * * * *'
+}
+    stages{
+    stage('Initialize') {
+            steps {
+                script {
+                    properties([pipelineTriggers([pollSCM('')])])
+                }
+                git 'https://github.com/venu148/jenkins2--spring-boot.git'
+                }
+        }
+        stage('1'){
+            steps{
+                sh 'echo hii11'
+                //sh 'sleep 120'
+        }
+    }
+    }
+}
