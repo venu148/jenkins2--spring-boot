@@ -8,8 +8,8 @@ pipeline{
   buildDiscarder(logRotator( numToKeepStr: '5', daysToKeepStr: '5'))
 }
 
-triggers { 
-  pollSCM('* * * * *')
+triggers {
+  pollSCM '*/1 * * * *'
 }
     stages{
     stage('Initialize') {
