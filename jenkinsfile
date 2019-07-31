@@ -4,12 +4,14 @@ pipeline{
         label 'slave_node1'
         }
     }
-    options { 
-  buildDiscarder(logRotator( numToKeepStr: '10', daysToKeepStr: '5'))
+options{
+    quietPeriod 120
+    ansiColor('vga')
+    timestamps ()
 }
 triggers {
-  pollSCM 'H/5 * * * *'
-}
+        pollSCM 'H/5 * * * *'
+    }
     stages{
     stage('Initialize') {
             steps {
