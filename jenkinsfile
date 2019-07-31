@@ -5,10 +5,10 @@ pipeline{
         }
     }
     options { 
-  buildDiscarder(logRotator( numToKeepStr: '5', daysToKeepStr: '5'))
+  buildDiscarder(logRotator( numToKeepStr: '10', daysToKeepStr: '5'))
 }
 triggers {
-  pollSCM 'H/2 * * * *'
+  pollSCM 'H/5 * * * *'
 }
     stages{
     stage('Initialize') {
